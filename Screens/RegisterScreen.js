@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, Image, View, ScrollView} from 'react-native';
 import {
   Button,
+  Icon,
   Input,
   Layout,
   Modal,
@@ -83,8 +84,23 @@ const RegisterScreen = ({navigation}) => {
       backdropStyle={styles.backdrop}
       onBackdropPress={() => setVisibleModal(false)}>
       <View style={styles.containerModal}>
-        <Text style={{fontSize: 32}}>✅</Text>
-        <Text style={{marginTop: 14}}>Kamu berhasil membuat akun</Text>
+        <Icon
+          fill="#6690FF"
+          name="checkmark-square-outline"
+          style={{width: 64, height: 64}}
+        />
+        <Text
+          style={{
+            marginTop: 14,
+            textAlign: 'center',
+            fontWeight: 'bold',
+            fontSize: 18,
+          }}>
+          Kamu berhasil membuat akun
+        </Text>
+        <Text style={{textAlign: 'center'}}>
+          Akun anda akan diverifikasi oleh admin maksimal 1x24 jam
+        </Text>
       </View>
     </Modal>
   );
@@ -275,8 +291,8 @@ const styles = StyleSheet.create({
   },
   containerModal: {
     backgroundColor: 'white',
-    paddingHorizontal: '10%',
-    paddingVertical: '20%',
+    paddingHorizontal: '5%',
+    paddingVertical: '15%',
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 25,

@@ -7,6 +7,7 @@ import {
   Text,
   Modal,
   Spinner,
+  Icon,
 } from '@ui-kitten/components';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -14,6 +15,7 @@ import {AuthContext} from '../utils/authContext';
 
 const LoginScreen = ({navigation}) => {
   const [visible, setVisible] = useState(false);
+  const [visibleModal, setVisibleModal] = useState(false);
   const [data, setData] = useState({
     name: '',
     nik: '',
@@ -56,10 +58,7 @@ const LoginScreen = ({navigation}) => {
       .catch(function (error) {
         setVisible(false);
         if (error.response.data.message === 'Nama atau NIK kamu salah') {
-          Alert.alert(
-            'Login tidak berhasil',
-            'Nama dan NIK kamu tidak tepat atau Registrasikan terlebih dahulu akun kamu jika kamu belum mempunyai akun.',
-          );
+          setVisibleModal(true);
         } else {
           if (error.response.data.errors.name) {
             setCaption(prevState => ({
@@ -77,6 +76,33 @@ const LoginScreen = ({navigation}) => {
       });
   };
 
+  const modal = () => (
+    <Modal
+      visible={visibleModal}
+      backdropStyle={styles.backdrop}
+      onBackdropPress={() => setVisibleModal(false)}>
+      <View style={styles.containerModal}>
+        <Icon
+          fill="#FF4235"
+          name="close-square-outline"
+          style={{width: 64, height: 64}}
+        />
+        <Text
+          style={{
+            marginTop: 14,
+            textAlign: 'center',
+            fontWeight: 'bold',
+            fontSize: 18,
+          }}>
+          Login tidak berhasil
+        </Text>
+        <Text style={{textAlign: 'center'}}>
+          Nama atau NIK salah atau akun kamu belum tervalidasi.
+        </Text>
+      </View>
+    </Modal>
+  );
+
   const modalLoading = () => (
     <Modal
       visible={visible}
@@ -91,6 +117,7 @@ const LoginScreen = ({navigation}) => {
 
   return (
     <Layout style={styles.container}>
+      {modal()}
       {modalLoading()}
       <ScrollView showsVerticalScrollIndicator={false}>
         <Layout style={styles.containerImage}>
@@ -225,8 +252,8 @@ const styles = StyleSheet.create({
   text: {color: '#808080'},
   containerModal: {
     backgroundColor: 'white',
-    paddingHorizontal: '10%',
-    paddingVertical: '20%',
+    paddingHorizontal: '5%',
+    paddingVertical: '15%',
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 25,
