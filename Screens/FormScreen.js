@@ -45,9 +45,6 @@ const FormScreen = ({route, navigation}) => {
         }));
       }
     });
-    console.log(data);
-    console.log(check);
-    console.log(Object.keys(layanan[id].fill).length);
 
     if (check === Object.keys(layanan[id].fill).length) {
       navigation.navigate('Upload', {id: i, data: data, token: token});
@@ -75,7 +72,6 @@ const FormScreen = ({route, navigation}) => {
           selectedIndex={selectedIndex[i - 1]}
           size="large"
           onSelect={index => {
-            console.log(index);
             var arr = [...selectedIndex];
             arr[i - 1] = index;
             setSelectedIndex(arr);

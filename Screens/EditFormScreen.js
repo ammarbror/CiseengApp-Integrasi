@@ -29,8 +29,6 @@ const EditFormScreen = ({route, navigation}) => {
   };
 
   const navigateConfirm = i => {
-    console.log(dataPengajuan);
-    console.log(Object.keys(layanan[id].fill).length);
     navigation.navigate('Confirm', {
       id: i,
       data: dataPengajuan,
@@ -52,11 +50,6 @@ const EditFormScreen = ({route, navigation}) => {
   ]);
 
   const inputSelect = (label, value, option, i, fill, j) => {
-    console.log(
-      selectedIndex[i - 1].row === value.index.row
-        ? option[value.index.row]
-        : option[selectedIndex[i - 1].row],
-    );
     return (
       <View style={styles.containerInput} key={j}>
         <Text style={styles.label}>{label}</Text>
@@ -89,8 +82,6 @@ const EditFormScreen = ({route, navigation}) => {
   const [date, setDate] = useState([new Date(), new Date(), new Date()]);
 
   const inputDate = (label, value, fill, i, j) => {
-    console.log(`date: ${date[i - 1]}`);
-    console.log(`val: ${value}`);
     // icon calendar
     const CalendarIcon = props => <Icon {...props} name="calendar" />;
     const now = new Date();
@@ -271,8 +262,6 @@ const EditFormScreen = ({route, navigation}) => {
           {/* input */}
           <Divider style={styles.divider} />
           {layanan[id].form.map((data, i) => {
-            // console.log(`data: ${dataPengajuan[data.fill]}`);
-            // console.log(data);
             if (data.type === 'disabled') {
               return inputDisabled(
                 data.label,

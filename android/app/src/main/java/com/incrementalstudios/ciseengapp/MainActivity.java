@@ -1,4 +1,4 @@
-package com.helloworld;
+package com.incrementalstudios.ciseengapp;
 
 import com.facebook.react.ReactActivity;
 

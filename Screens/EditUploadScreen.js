@@ -39,8 +39,6 @@ const EditUploadScreen = ({route, navigation}) => {
   };
 
   const navigateConfirm = i => {
-    console.log(dataUpload);
-    console.log(Object.keys(layanan[id].fill).length);
     navigation.navigate('Confirm', {
       id: i,
       data: dataUpload,

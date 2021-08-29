@@ -63,8 +63,6 @@ const ListRiwayatScreen = ({route, navigation}) => {
         <View style={styles.containerList}>
           {data.length !== 0 ? (
             data.map((item, i) => {
-              console.log(i);
-              console.log(item.pengajuan.id);
               item = item.pengajuan;
               return (
                 <CardRiwayat

@@ -71,7 +71,7 @@ const layanan = [
       {
         id: 5,
         label: 'Permohonan KTP',
-        value: ['Baru', 'Perpanjangan', 'Penggantian'],
+        value: ['Baru', 'Penggantian'],
         type: 'select',
         fill: 'permohonan',
       },
@@ -99,7 +99,7 @@ const layanan = [
       {
         id: 9,
         label: 'Alamat',
-        value: 'Alamat',
+        value: 'Alamat Lengkap',
         type: 'inputArea',
         fill: 'alamat',
       },
@@ -287,7 +287,7 @@ const layanan = [
       {
         id: 8,
         label: 'Alamat',
-        value: 'Alamat',
+        value: 'Alamat Lengkap',
         type: 'inputArea',
         fill: 'alamat',
       },
@@ -297,6 +297,13 @@ const layanan = [
         value: 'RT',
         type: 'inputNumber',
         fill: 'rt',
+      },
+      {
+        id: 9,
+        label: 'RW',
+        value: 'RW',
+        type: 'inputNumber',
+        fill: 'rw',
       },
       {
         id: 10,
@@ -345,6 +352,7 @@ const layanan = [
       nik: '',
       alamat: '',
       rt: '',
+      rw: '',
       keperluan: '',
     },
     fillUpload: {
@@ -424,7 +432,7 @@ const layanan = [
       {
         id: 8,
         label: 'Alamat',
-        value: 'Alamat',
+        value: 'Alamat Lengkap',
         type: 'inputArea',
         fill: 'alamat',
       },
@@ -434,6 +442,13 @@ const layanan = [
         value: 'RT',
         type: 'inputNumber',
         fill: 'rt',
+      },
+      {
+        id: 9,
+        label: 'RW',
+        value: 'RW',
+        type: 'inputNumber',
+        fill: 'rw',
       },
       {
         id: 10,
@@ -482,6 +497,7 @@ const layanan = [
       kewarganegaraan: '',
       alamat: '',
       rt: '',
+      rw: '',
       keperluan: '',
     },
     fillUpload: {
@@ -585,16 +601,8 @@ const layanan = [
       {
         id: 5,
         label: 'Pekerjaan',
-        value: [
-          'Petani',
-          'Peternak',
-          'Pegawai Negeri',
-          'Pegawai Swasta',
-          'Pedagang',
-          'Pebisnis',
-          'Lain-lain',
-        ],
-        type: 'select',
+        value: 'Pekerjaan',
+        type: 'input',
         fill: 'pekerjaan',
       },
       {
@@ -614,7 +622,7 @@ const layanan = [
       {
         id: 8,
         label: 'Alamat',
-        value: 'Alamat',
+        value: 'Alamat Lengkap',
         type: 'inputArea',
         fill: 'alamat',
       },
@@ -666,10 +674,7 @@ const layanan = [
         index: new IndexPath(0),
       },
       kewarganegaraan: '',
-      pekerjaan: {
-        pekerjaan: 'Petani',
-        index: new IndexPath(0),
-      },
+      pekerjaan: '',
       alamat: '',
       jenis_usaha: '',
       alamat_usaha: '',
@@ -712,7 +717,7 @@ const layanan = [
         label: 'Tempat Lahir',
         value: 'Tempat lahir',
         type: 'input',
-        fill: 'nik',
+        fill: 'tempat_lahir',
       },
       {
         id: 3,
@@ -738,7 +743,7 @@ const layanan = [
       {
         id: 6,
         label: 'Alamat',
-        value: 'Alamat',
+        value: 'Alamat Lengkap',
         type: 'inputArea',
         fill: 'alamat',
       },
@@ -747,7 +752,7 @@ const layanan = [
         label: 'Nomor NIK',
         value: 'NIK',
         type: 'inputNumber',
-        fill: 'agama',
+        fill: 'nik',
       },
     ],
     upload: [
@@ -782,11 +787,11 @@ const layanan = [
         jenis_kelamin: 'Laki - laki',
         index: new IndexPath(0),
       },
-      alamat: '',
       agama: {
         agama: 'Islam',
         index: new IndexPath(0),
       },
+      alamat: '',
     },
     fillUpload: {
       foto_ktp: '',
@@ -898,10 +903,6 @@ const layanan = [
           syarat: 'Fotocopy KK',
         },
         {
-          id: 2,
-          syarat: 'Fotocopy KTP (jika sudah punya)',
-        },
-        {
           id: 3,
           syarat:
             'Surat Pengantar dari RT setempat (tulis Hari Tempat Tanggal Lahir, jenis kelamin, dan Anak ke.....)',
@@ -975,16 +976,8 @@ const layanan = [
       {
         id: 5,
         label: 'Pekerjaan Ayah',
-        value: [
-          'Petani',
-          'Peternak',
-          'Pegawai Negeri',
-          'Pegawai Swasta',
-          'Pedagang',
-          'Pebisnis',
-          'Lain-lain',
-        ],
-        type: 'select',
+        value: 'Pekerjaan Ayah',
+        type: 'input',
         fill: 'pekerjaan_ayah',
       },
       {
@@ -1004,7 +997,7 @@ const layanan = [
       {
         id: 8,
         label: 'Alamat Ayah',
-        value: 'Alamat',
+        value: 'Alamat Lengkap',
         type: 'inputArea',
         fill: 'alamat_ayah',
       },
@@ -1039,16 +1032,8 @@ const layanan = [
       {
         id: 13,
         label: 'Pekerjaan Ibu',
-        value: [
-          'Petani',
-          'Peternak',
-          'Pegawai Negeri',
-          'Pegawai Swasta',
-          'Pedagang',
-          'Pebisnis',
-          'Lain-lain',
-        ],
-        type: 'select',
+        value: 'Pekerjaan Ibu',
+        type: 'input',
         fill: 'pekerjaan_ibu',
       },
       {
@@ -1068,19 +1053,12 @@ const layanan = [
       {
         id: 16,
         label: 'Alamat Ibu',
-        value: 'Alamat',
+        value: 'Alamat Lengkap',
         type: 'inputArea',
         fill: 'alamat_ibu',
       },
     ],
     upload: [
-      {
-        id: 1,
-        label: 'Foto KTP',
-        value: 'fileKTP',
-        type: 'upload',
-        fill: 'foto_ktp',
-      },
       {
         id: 2,
         label: 'Foto KK',
@@ -1113,19 +1091,13 @@ const layanan = [
         agama_ayah: 'Islam',
         index: new IndexPath(0),
       },
-      pekerjaan_ayah: {
-        pekerjaan_ayah: 'Petani',
-        index: new IndexPath(0),
-      },
+      pekerjaan_ayah: '',
       nik_ayah: '',
       alamat_ayah: '',
       nama_ibu: '',
       tempat_lahir_ibu: '',
       tanggal_lahir_ibu: '',
-      pekerjaan_ibu: {
-        pekerjaan_ibu: 'Petani',
-        index: new IndexPath(0),
-      },
+      pekerjaan_ibu: '',
       agama_ibu: {
         agama_ibu: 'Islam',
         index: new IndexPath(0),
@@ -1134,7 +1106,6 @@ const layanan = [
       alamat_ibu: '',
     },
     fillUpload: {
-      foto_ktp: '',
       foto_kk: '',
       foto_pengantar: '',
     },
@@ -1211,30 +1182,22 @@ const layanan = [
       {
         id: 8,
         label: 'Alamat',
-        value: 'Alamat',
+        value: 'Alamat Lengkap',
         type: 'inputArea',
         fill: 'alamat',
       },
       {
         id: 9,
         label: 'Status',
-        value: ['Belum Menikah', 'Sudah Menikah'],
+        value: ['Belum Menikah', 'Sudah Menikah', 'Janda', 'Duda'],
         type: 'select',
         fill: 'status',
       },
       {
         id: 10,
         label: 'Pekerjaan',
-        value: [
-          'Petani',
-          'Peternak',
-          'Pegawai Negeri',
-          'Pegawai Swasta',
-          'Pedagang',
-          'Pebisnis',
-          'Lain-lain',
-        ],
-        type: 'select',
+        value: 'Pekerjaan',
+        type: 'input',
         fill: 'pekerjaan',
       },
     ],
@@ -1280,10 +1243,7 @@ const layanan = [
         status: 'Belum Menikah',
         index: new IndexPath(0),
       },
-      pekerjaan: {
-        pekerjaan: 'Petani',
-        index: new IndexPath(0),
-      },
+      pekerjaan: '',
     },
     fillUpload: {
       foto_ktp: '',

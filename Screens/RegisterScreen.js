@@ -99,8 +99,16 @@ const RegisterScreen = ({navigation}) => {
           Kamu berhasil membuat akun
         </Text>
         <Text style={{textAlign: 'center'}}>
-          Akun anda akan diverifikasi oleh admin maksimal 1x24 jam
+          Akun anda akan diverifikasi oleh admin maksimal 1x24 jam pada hari
+          kerja
         </Text>
+        <Button
+          appearance="ghost"
+          status="danger"
+          style={{marginTop: 10}}
+          onPress={() => setVisibleModal(false)}>
+          Tutup
+        </Button>
       </View>
     </Modal>
   );
@@ -291,8 +299,8 @@ const styles = StyleSheet.create({
   },
   containerModal: {
     backgroundColor: 'white',
-    paddingHorizontal: '5%',
-    paddingVertical: '15%',
+    paddingHorizontal: 16,
+    paddingVertical: 26,
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 25,

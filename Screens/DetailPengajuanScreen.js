@@ -30,7 +30,11 @@ const DetailPengajuanScreen = ({route, navigation}) => {
   const fixLabel = text => {
     text = text.replace(/_/g, ' ');
     return text.replace(/\w\S*/g, function (txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      if (txt === 'nik' || txt === 'rt' || txt === 'rw') {
+        return txt.toUpperCase();
+      } else {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
     });
   };
 
@@ -158,7 +162,6 @@ const DetailPengajuanScreen = ({route, navigation}) => {
                     <View style={styles.containerData} key={i}>
                       <Text style={styles.label}>{fixLabel(item)}</Text>
                       <Text style={styles.data}>
-                        {/* {console.log(fixLabel(item).includes('Tanggal'))} */}
                         {item.includes('tanggal')
                           ? formatDate(data.detail_pengajuan[item])
                           : data.detail_pengajuan[item]}

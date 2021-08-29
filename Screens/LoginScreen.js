@@ -51,7 +51,6 @@ const LoginScreen = ({navigation}) => {
       .then(function (response) {
         setVisible(false);
         // Save local storage signin and token
-        console.log(response.data.token);
         AsyncStorage.setItem('token', response.data.token);
         signIn(response.data.token);
       })
@@ -94,11 +93,18 @@ const LoginScreen = ({navigation}) => {
             fontWeight: 'bold',
             fontSize: 18,
           }}>
-          Login tidak berhasil
+          Login Tidak Berhasil
         </Text>
         <Text style={{textAlign: 'center'}}>
           Nama atau NIK salah atau akun kamu belum tervalidasi.
         </Text>
+        <Button
+          appearance="ghost"
+          status="danger"
+          style={{marginTop: 10}}
+          onPress={() => setVisibleModal(false)}>
+          Tutup
+        </Button>
       </View>
     </Modal>
   );
@@ -252,8 +258,8 @@ const styles = StyleSheet.create({
   text: {color: '#808080'},
   containerModal: {
     backgroundColor: 'white',
-    paddingHorizontal: '5%',
-    paddingVertical: '15%',
+    paddingHorizontal: 16,
+    paddingVertical: 26,
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 25,

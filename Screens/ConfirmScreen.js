@@ -33,7 +33,7 @@ const ConfirmScreen = ({route, navigation}) => {
   const fixLabel = text => {
     text = text.replace(/_/g, ' ');
     return text.replace(/\w\S*/g, function (txt) {
-      if (txt === 'nik') {
+      if (txt === 'nik' || txt === 'rt' || txt === 'rw') {
         return txt.toUpperCase();
       } else {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -120,10 +120,7 @@ const ConfirmScreen = ({route, navigation}) => {
         labelStore[i] === 'permohonan' ||
         labelStore[i] === 'jenis_kelamin' ||
         labelStore[i] === 'agama' ||
-        labelStore[i] === 'pekerjaan' ||
-        labelStore[i] === 'pekerjaan_ayah' ||
         labelStore[i] === 'agama_ayah' ||
-        labelStore[i] === 'pekerjaan_ibu' ||
         labelStore[i] === 'agama_ibu' ||
         labelStore[i] === 'status'
       ) {
@@ -294,10 +291,7 @@ const ConfirmScreen = ({route, navigation}) => {
                         : item === 'permohonan' ||
                           item === 'jenis_kelamin' ||
                           item === 'agama' ||
-                          item === 'pekerjaan' ||
-                          item === 'pekerjaan_ayah' ||
                           item === 'agama_ayah' ||
-                          item === 'pekerjaan_ibu' ||
                           item === 'agama_ibu' ||
                           item === 'status'
                         ? data[item][item]

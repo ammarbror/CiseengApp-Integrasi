@@ -255,7 +255,7 @@ const UploadScreen = ({route, navigation}) => {
             // }));
             navigateConfirm(id);
           }}>
-          Submit
+          Selanjutnya
         </Button>
       </ScrollView>
       {modal()}

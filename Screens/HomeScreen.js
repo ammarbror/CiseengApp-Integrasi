@@ -162,7 +162,6 @@ const HomeScreen = ({route, navigation}) => {
 
   return (
     <Layout style={styles.container}>
-      {/* {console.log(pengajuan.slice(0).reverse())} */}
       <StatusBar translucent backgroundColor="transparent" />
       {dataUser.name ? (
         <>
